@@ -28,9 +28,9 @@ var TemplateView = module.exports = require('extendcompose').withMiddleware({
                 childPrototypeAfter.template.local
             );
         } else {
-            return childPrototypeAfter;
+            return;
         }
-        return assign(childPrototypeAfter,
+        assign(childPrototypeAfter,
             {
                 template: Object.assign({},
                     childPrototypeAfter.template,
