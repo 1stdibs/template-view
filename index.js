@@ -30,8 +30,7 @@ var TemplateView = module.exports = require('extendcompose').withMiddleware({
         } else {
             return childPrototypeAfter;
         }
-        return Object.assign({},
-            childPrototypeAfter,
+        return assign(childPrototypeAfter,
             {
                 template: Object.assign({},
                     childPrototypeAfter.template,
