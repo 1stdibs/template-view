@@ -24,7 +24,6 @@
     "sinon": "^1.17.2"
   },
   "dependencies": {
-    "ampersand-view": "^9.0.2",
     "compose-class-names": "^1.0.3",
     "extendcompose": "^1.0.1",
     "lodash.assign": "^4.0.0",
