@@ -1,6 +1,6 @@
 {
   "name": "template-view",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "TemplateView is a lightweight view for rapid prototyping with a concise syntax, use it when you don't care to create a bunch of subclasses just to show a set of mostly static templates.",
   "author": "1stdibs.com, Inc.",
   "scripts": {
