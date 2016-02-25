@@ -33,7 +33,7 @@ var TemplateView = module.exports = require('extendcompose').withMiddleware({
         }
         assign(childPrototypeAfter,
             {
-                template: Object.assign({},
+                template: assign({},
                     childPrototypeAfter.template,
                     {
                         local: newLocalClassNames
