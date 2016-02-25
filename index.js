@@ -10,6 +10,7 @@ var isArray = require('lodash.isarray');
 var isFunction = require('lodash.isfunction');
 var mapValues = require('lodash.mapvalues');
 var composeClassNames = require('compose-class-names');
+var matches = require('matches-selector');
 var View = require('simple-view').View;
 var TemplateView = module.exports = require('extendcompose').withMiddleware({
     afterPrototype: function (parentPrototype, childPrototypeBefore, childPrototypeAfter) {
@@ -51,7 +52,7 @@ var prototype = {
     getSubElement : function (subViewKey) {
         var subSelector = "[data-append=" + subViewKey + "]";
         var subs = this.$(subSelector);
-        if (this.el.matches(subSelector)) {
+        if (matches(this.el, subSelector)) {
             subs = subs.concat([this.el]);
         }
         return subs[0];
