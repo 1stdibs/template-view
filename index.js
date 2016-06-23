@@ -1,8 +1,6 @@
 "use strict";
 
 var result = require('lodash.result');
-var compact = require('lodash.compact');
-var zipObject = require('lodash.zipobject');
 var assign = require('lodash.assign');
 var map = require('lodash.map');
 var forEach = require('lodash.foreach');
@@ -29,7 +27,7 @@ var TemplateView = module.exports = require('extendcompose').withMiddleware({
                 childPrototypeAfter.template.local
             );
         } else {
-            return;
+            return undefined;
         }
         assign(childPrototypeAfter,
             {
@@ -108,14 +106,14 @@ var prototype = {
             var el = this.getSubElement(appendKey);
             var wasArray = true;
             if (!el) {
-                return; // couldn't identify a subview parent
+                return undefined; // couldn't identify a subview parent
             }
             if (!isArray(subViews)) {
                 subViews = [subViews];
                 wasArray = false;
             }
             if (!subViews) {
-                return;
+                return undefined;
             }
             subViews = map(subViews, function (subView, i) {
                 var innerEl = el;
@@ -136,7 +134,7 @@ var prototype = {
                     innerEl.parentNode.removeChild(innerEl);
                 }
                 if (!subView) {
-                    return;
+                    return undefined;
                 }
                 if (innerEl !== subView.el) {
                     innerEl.appendChild(subView.el);
@@ -150,7 +148,7 @@ var prototype = {
                 this.subViewAppended(subViews);
             }
             if (!subViews) {
-                return;
+                return undefined;
             }
             return subViews;
         }.bind(this));

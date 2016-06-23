@@ -27,7 +27,6 @@
     "compose-class-names": "^1.0.3",
     "extendcompose": "^1.0.3",
     "lodash.assign": "^4.0.0",
-    "lodash.compact": "^3.0.0",
     "lodash.foreach": "^4.0.0",
     "lodash.isarray": "^4.0.0",
     "lodash.isfunction": "^3.0.7",
@@ -35,7 +34,6 @@
     "lodash.mapvalues": "^4.0.0",
     "lodash.result": "^4.0.0",
     "lodash.template": "^4.0.0",
-    "lodash.zipobject": "^4.0.0",
     "matches-selector": "^1.0.0",
     "normalize-to-view": "^1.0.7",
     "simple-view": "^1.2.11"
