@@ -36,6 +36,6 @@
     "lodash.template": "^4.0.0",
     "matches-selector": "https://github.com/antialias/matches-selector#no-global-element-forbes",
     "normalize-to-view": "^1.0.7",
-    "simple-view": "^1.2.11"
+    "simple-view": "^1.2.15"
   }
 }
