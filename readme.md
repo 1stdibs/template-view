@@ -48,7 +48,6 @@ some notes:
  - `this.model.toJSON()` is automatically offered as as the data for the template.
  - automatically appends subviews using a scope map, passed through prototype or options. Elements on which to append are declared with a `data-append=<name-in-scope>` attribute.
 
-
 ### `scope` object properties
 
 TemplateView can take a _template specification_ either as a constructor option or on the prototype of a subclass. The template specification can have the following forms:
@@ -65,3 +64,62 @@ object
  * `Object` - options object used to construct a new TemplateView
  * `boolean` - if false, the container element will be detached
  * `templateVars` - An object or function that returns the object that will be injected into the template. Defaults to `this.model.toJSON()`
+
+### css modules
+
+TemplateView supports CSS modules by offering a convention for passing classnames in the template property on `options` or `prototype`:
+
+```js
+import css from `my-styles.css`;
+...
+template: {
+    src: myTemplate,
+    local: css // exposes css object in myTemplate as obj.local
+}
+...
+```
+
+#### extending styles from superclasses
+
+Local styles can be composed with the superclass using a syntax similar to extendcompose. In the following example:
+
+##### superclass-styles.css
+```css
+:local(.foo) { ... }
+```
+##### superclass-template.html
+```html
+<script type='text/template'>
+    <div id='#the-div' class='<%= obj.local.foo %>' >
+</script>
+```
+##### superclass.js
+```js
+const css = require('./superclass-styles.css');
+const template = require('./superclass-template.html');
+export TemplateView.extend({
+    template: {
+        src: template,
+        local: css
+    }
+});
+```
+##### subclass-styles.css
+```css
+:local(.foo) { ... }
+```
+##### subclass.js
+```js
+const Superclass = require('./suprclass');
+const css = require('./subclass-styles.css');
+export Superclass.extend({
+    template: {
+        local__: css
+    }
+});
+```
+
+For instances of superclass.js, `#the-div` will have class attribute `superclass-styles-foo`".
+But for instances of subclass.js, `#the-div` will have class attribute `superclass-styles-foo subclass-styles-foo`.
+
+_Note:_ if `__local` was used in subclass instead of `local__`, then `#the-div` would have class attribute `subclass-styles-foo superclass-styles-foo`, i.e. the subclass name would come before the superclass name.
