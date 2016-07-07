@@ -97,7 +97,7 @@ Local styles can be composed with the superclass using a syntax similar to exten
 ```js
 const css = require('./superclass-styles.css');
 const template = require('./superclass-template.html');
-export TemplateView.extend({
+export default TemplateView.extend({
     template: {
         src: template,
         local: css
@@ -112,7 +112,7 @@ export TemplateView.extend({
 ```js
 const Superclass = require('./suprclass');
 const css = require('./subclass-styles.css');
-export Superclass.extend({
+export default Superclass.extend({
     template: {
         local__: css
     }
