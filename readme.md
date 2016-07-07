@@ -7,7 +7,7 @@ npm install --save template-view
 ```
 
 ##usage:
-To render a model's toJSON() into a template and package it into a backbone-style view instance, it's just:
+To render a model's `toJSON()` into a template and package it into a backbone-style view instance, it's just:
 
 ```js
 const TemplateView = require('template-view');
@@ -16,13 +16,13 @@ new TemplateView({ // instantiating, not extending here; an instance of the obje
   model: myModel // model.toJSON gets passed to the template as data
 });
 ```
-You can also nest TemplateView configs inside of a scope property to build more complex views:
+You can also nest TemplateView configs inside of a `scope` property to build more complex views:
 ```js
 new TemplateView({
   template: outerTemplate,
   model: outerModel,
   scope: {
-    'sub-templateview-goes-here': { // plain objects used to create a new TemplateView
+    'sub-templateview-goes-here': { // plain objects as passed as the argument to `new TemplateView(/* right here */)`
       template innerTemplate
       model: innerModel
     },
@@ -48,9 +48,10 @@ some notes:
  - `this.model.toJSON()` is automatically offered as as the data for the template.
  - automatically appends subviews using a scope map, passed through prototype or options. Elements on which to append are declared with a `data-append=<name-in-scope>` attribute.
 
-###api
 
-TemplateView can take a _template spcification_ either as a constructor option or on the prototype of a subclass. The template specification can have the following forms:
+### `scope` object properties
+
+TemplateView can take a _template specification_ either as a constructor option or on the prototype of a subclass. The template specification can have the following forms:
 
 object
 
