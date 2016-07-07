@@ -113,7 +113,7 @@ export default TemplateView.extend({
 import Superclass from './superclass';
 import css from './subclass-styles.css';
 export default Superclass.extend({
-    template: {
+    template__: {
         local__: css
     }
 });
