@@ -111,7 +111,7 @@ export default TemplateView.extend({
 ##### subclass.js
 ```js
 import Superclass from './superclass';
-const css = require('./subclass-styles.css');
+import css from './subclass-styles.css';
 export default Superclass.extend({
     template: {
         local__: css
