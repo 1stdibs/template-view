@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "compose-class-names": "^1.0.3",
+    "dibslint": "1.5.2",
     "extendcompose": "^1.0.3",
     "lodash.assign": "^4.0.0",
     "lodash.foreach": "^4.0.0",
@@ -34,21 +35,21 @@
     "lodash.mapvalues": "^4.0.0",
     "lodash.result": "^4.0.0",
     "lodash.template": "^4.0.0",
-    "matches-selector": "git+https://github.com/antialias/matches-selector.git#no-global-element-forbes",
+    "matches-selector-universal": "1.0.5",
     "normalize-to-view": "^1.0.8",
-    "simple-view": "^1.2.15"
+    "simple-view": "1.2.16"
   },
   "directories": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antialias/template-view.git"
+    "url": "git+https://github.com/1stdibs/template-view.git"
   },
   "keywords": [],
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/antialias/template-view/issues"
+    "url": "https://github.com/1stdibs/template-view/issues"
   },
-  "homepage": "https://github.com/antialias/template-view#readme"
+  "homepage": "https://github.com/1stdibs/template-view#readme"
 }

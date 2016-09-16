@@ -8,7 +8,7 @@ var isArray = require('lodash.isarray');
 var isFunction = require('lodash.isfunction');
 var mapValues = require('lodash.mapvalues');
 var composeClassNames = require('compose-class-names');
-var matches = require('matches-selector');
+var matches = require('matches-selector-universal');
 var View = require('simple-view').View;
 var TemplateView = module.exports = require('extendcompose').withMiddleware({
     afterPrototype: function (parentPrototype, childPrototypeBefore, childPrototypeAfter) {
