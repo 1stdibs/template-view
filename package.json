@@ -25,7 +25,6 @@
   },
   "dependencies": {
     "compose-class-names": "^1.0.3",
-    "dibslint": "1.5.2",
     "extendcompose": "^1.0.3",
     "lodash.assign": "^4.0.0",
     "lodash.foreach": "^4.0.0",
